@@ -52,7 +52,7 @@ const phoneMask = (value) => {
   return value
 }
 
-whatsapp.addEventListener('keyup', () => {
+document.getElementById("whatsapp").addEventListener('keyup', () => {
     handlePhone();
 })
 });
