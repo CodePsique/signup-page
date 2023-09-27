@@ -52,7 +52,8 @@ const phoneMask = (value) => {
   return value
 }
 
-document.getElementById("whatsapp").addEventListener('keyup', () => {
+document.getElementById("whatsapp").addEventListener('keyup', (e) => {
+    e.preventDefault();
     handlePhone();
 })
 });
