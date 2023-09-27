@@ -52,8 +52,8 @@ const phoneMask = (value) => {
   return value
 }
 
-document.getElementById("whatsapp").addEventListener('keyup', (e) => {
-    e.preventDefault();
+const whatsappInput = document.getElementById('whatsapp');
+whatsappInput.addEventListener('input', () => {
     handlePhone();
 })
 });
