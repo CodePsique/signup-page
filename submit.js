@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         const whatsappInput = document.getElementById('whatsapp');
-        whatsappInput.addEventListener('input', () => {
+        whatsappInput.addEventListener('keyup', (e) => {
+            e.preventDefault()
         handlePhone();
     })
     });
