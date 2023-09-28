@@ -253,8 +253,7 @@ body {
     display: flex;
   }
   .container {
-    width: 50%;
-    overflow-x: hidden;
+    width: 100%;
   }
   .form {
     width: 100%;
