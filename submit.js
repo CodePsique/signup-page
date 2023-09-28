@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Erro de rede ao enviar a inscrição", error);
         });
     };
+    
     var signupButton = document.getElementById('signup');
     signupButton.addEventListener('click', function (event) {
         console.log('teste');
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         signup();
         
     });
+
     const handlePhone = (event) => {
         let input = event.target
         input.value = phoneMask(input.value)
@@ -55,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     const whatsappInput = document.getElementById('whatsapp');
-    whatsappInput.addEventListener('keyup', (e) => {
-        e.preventDefault()
-        handlePhone();
+    whatsappInput.addEventListener('input', (e) => {
+        handlePhone(e);
     })
 });
