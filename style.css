@@ -280,7 +280,7 @@ body {
     flex-direction: column;
     overflow-y: scroll;
     flex-wrap: nowrap;
-    max-height: 25rem;
+    max-height: 20rem;
     padding-right: 5rem;
   }
 }
