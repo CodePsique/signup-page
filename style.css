@@ -276,7 +276,7 @@ body {
     flex-direction: column;
     overflow-y: scroll;
     flex-wrap: nowrap;
-    max-height: 35rem;
+    max-height: 25rem;
     padding-right: 5rem;
   }
 }
