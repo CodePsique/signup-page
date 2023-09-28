@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log('teste');
         event.preventDefault();
         signup();
+        validateForm();
         
     });
 
@@ -60,4 +61,34 @@ document.addEventListener("DOMContentLoaded", function () {
     whatsappInput.addEventListener('input', (e) => {
         handlePhone(e);
     })
+
+    const form = document.getElementById('registration-form');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', function (event) {
+        // Verifique se algum campo obrigatório não foi preenchido
+        if (!validateForm()) {
+            event.preventDefault(); // Impede o envio do formulário
+            errorMessage.textContent = 'Todos os campos devem ser preenchidos.';
+        } else {
+            errorMessage.textContent = ''; // Limpa a mensagem de erro se tudo estiver preenchido
+        }
+    });
+
+    // Função para validar o formulário
+    function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const whatsapp = document.getElementById("whatsapp").value;
+        const expectations = document.getElementById("expectations").value;
+        const discovery = document.getElementById("discovery").value;
+        const availability = document.querySelector('input[name="availability"]:checked');
+
+        // Verifique se algum campo obrigatório está em branco
+        if (!name || !email || !whatsapp || !expectations || !availability) {
+            return false;
+        }
+
+        return true;
+    }
 });
