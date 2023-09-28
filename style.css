@@ -261,6 +261,9 @@ body {
   body {
     overflow: hidden;
   }
+  .input-box {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1064px) {
