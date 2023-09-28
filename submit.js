@@ -82,10 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const whatsapp = document.getElementById("whatsapp").value;
         const expectations = document.getElementById("expectations").value;
         const discovery = document.getElementById("discovery").value;
-        const availability = document.querySelector('input[name="availability"]:checked');
+        const availability = document.querySelector('input[name="availability"]:checked').value;
 
         // Verifique se algum campo obrigatório está em branco
-        if (!name || !email || !whatsapp || !expectations || !availability) {
+        if (!name || !email || !whatsapp || !expectations || !discovery || !availability) {
             return false;
         }
 
