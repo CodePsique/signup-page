@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(function (response) {
             if (response.ok) {
                 document.getElementById("registration-form").reset();
+                document.getElementById('fill-fields').style.display = 'none';
                 alert("Inscrição enviada com sucesso!");
             }
             else {
@@ -39,8 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
     signupButton.addEventListener('click', function (event) {
         console.log('teste');
         event.preventDefault();
-        signup();
-        validateForm();
+        if (!validateForm()) {
+            document.getElementById('fill-fields').style.display = 'flex';
+        } else {
+            document.getElementById('fill-fields').style.display = 'none'; // Limpa a mensagem de erro se tudo estiver preenchido
+            signup();
+        }
         
     });
 
@@ -62,19 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
         handlePhone(e);
     })
 
-    const form = document.getElementById('registration-form');
-    const errorMessage = document.getElementById('error-message');
-
-    form.addEventListener('submit', function (event) {
-        // Verifique se algum campo obrigatório não foi preenchido
-        if (!validateForm()) {
-            event.preventDefault(); // Impede o envio do formulário
-            errorMessage.textContent = 'Todos os campos devem ser preenchidos.';
-        } else {
-            errorMessage.textContent = ''; // Limpa a mensagem de erro se tudo estiver preenchido
-        }
-    });
-
     // Função para validar o formulário
     function validateForm() {
         const name = document.getElementById("name").value;
@@ -82,10 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const whatsapp = document.getElementById("whatsapp").value;
         const expectations = document.getElementById("expectations").value;
         const discovery = document.getElementById("discovery").value;
-        const availability = document.querySelector('input[name="availability"]:checked').value;
 
         // Verifique se algum campo obrigatório está em branco
-        if (!name || !email || !whatsapp || !expectations || !discovery || !availability) {
+        if (!name || !email || !whatsapp || !expectations || !discovery) {
             return false;
         }
 

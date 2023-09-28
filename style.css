@@ -234,6 +234,12 @@ body {
   left: 2px;
 }
 
+#fill-fields {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+
 @media (min-width: 768px) {
   .button-53 {
     padding: .75rem 3rem;
