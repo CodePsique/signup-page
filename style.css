@@ -254,6 +254,7 @@ body {
   }
   .container {
     width: 50%;
+    overflow-x: hidden;
   }
   .form {
     width: 100%;
