@@ -7,7 +7,7 @@
 
   <script src="./submit.js"></script>
 
-  <title>Inscricao CodePsique</title>
+  <title>Inscrição Grupo de Estudos CodePsique</title>
 </head>
 <body>
   <div class="container">
@@ -15,7 +15,7 @@
       <img src="logo - final.png" alt="">
     </div>
     <div class="form sb-hidden">
-      <form action="#"  id="registration-form">
+      <form action="#"  id="registration-form" enctype="multipart/form-data">
         <div class="form-header">
           <h1 class="title">
             Inscreva-se!
@@ -55,6 +55,11 @@
                 <label for="afternoon">Aos sábados, à tarde, das 14h às 16h</label>
               </div>
             </div>
+
+            <div class="input-box">
+              <label for="profileImage">Selecione uma foto de perfil para o Welcome Day</label>
+              <input id="profile" type="file" accept="image/*" name="profileImage">
+          </div>
             
             <div class="input-box">
               <div class="checkbox-container">

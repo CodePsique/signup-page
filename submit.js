@@ -1,56 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var signup = function () {
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var whatsapp = document.getElementById("whatsapp").value;
-        var expectations = document.getElementById("expectations").value;
-        var discovery = document.getElementById("discovery").value;
-        var availability = document.querySelector('input[name="availability"]:checked').value;
-        var formData = {
-            name: name,
-            email: email,
-            whatsapp: whatsapp,
-            expectations: expectations,
-            discovery: discovery,
-            availability: availability,
-        };
+document.addEventListener("DOMContentLoaded", () => {
+    const signup = () => {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const whatsapp = document.getElementById("whatsapp").value;
+        const expectations = document.getElementById("expectations").value;
+        const discovery = document.getElementById("discovery").value;
+        const availability = document.querySelector('input[name="availability"]:checked').value;
+        const profileImage = document.getElementById('profile').files[0];
+        
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("whatsapp", whatsapp);
+        formData.append("expectations", expectations);
+        formData.append("discovery", discovery);
+        formData.append("availability", availability);
+        formData.append("profileImage", profileImage);
+
         fetch("https://codepsique-signup.onrender.com/users", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
+          method: "POST",
+          body: formData,
         })
         .then(function (response) {
-            if (response.ok) {
-                document.getElementById("registration-form").reset();
-                document.getElementById('fill-fields').style.display = 'none';
-                alert("Inscrição enviada com sucesso!");
-            }
-            else {
-                console.error("Erro ao enviar a inscrição");
-            }
+          if (response.ok) {
+            document.getElementById("registration-form").reset();
+            document.getElementById('fill-fields').style.display = 'none';
+            alert("Inscrição enviada com sucesso!");
+          }
+          else {
+            console.error("Erro ao enviar a inscrição");
+          }
         })
         .catch(function (error) {
-            console.error("Erro de rede ao enviar a inscrição", error);
+          console.error("Erro de rede ao enviar a inscrição", error);
         });
     };
     
-    var signupButton = document.getElementById('signup');
+    const signupButton = document.getElementById('signup');
     signupButton.addEventListener('click', function (event) {
-        console.log('teste');
         event.preventDefault();
         if (!validateForm()) {
             document.getElementById('fill-fields').style.display = 'flex';
         } else {
-            document.getElementById('fill-fields').style.display = 'none'; // Limpa a mensagem de erro se tudo estiver preenchido
+            document.getElementById('fill-fields').style.display = 'none';
             signup();
         }
         
     });
 
     const handlePhone = (event) => {
-        let input = event.target
+        const input = event.target
         input.value = phoneMask(input.value)
     }
     
@@ -63,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     const whatsappInput = document.getElementById('whatsapp');
-    whatsappInput.addEventListener('input', (e) => {
-        handlePhone(e);
+    whatsappInput.addEventListener('input', (event) => {
+        handlePhone(event);
     })
 
     // Função para validar o formulário
@@ -74,9 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const whatsapp = document.getElementById("whatsapp").value;
         const expectations = document.getElementById("expectations").value;
         const discovery = document.getElementById("discovery").value;
+        const availability = document.querySelector('input[name="availability"]:checked').value;
+        const profileImage = document.getElementById('profile').files[0];
 
         // Verifique se algum campo obrigatório está em branco
-        if (!name || !email || !whatsapp || !expectations || !discovery) {
+        if (!name || !email || !whatsapp || !expectations || !discovery || !availability || !profileImage) {
             return false;
         }
 

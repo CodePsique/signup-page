@@ -234,6 +234,11 @@ body {
   left: 2px;
 }
 
+#profile {
+  box-shadow:none;
+  border: none;
+}
+
 #fill-fields {
   color: red;
   font-size: 14px;
