@@ -1,14 +1,14 @@
 
 
 const getUsers = async () => {
-  const allUsers = await fetch("http://localhost:3333/users", {
+  const allUsers = await fetch("https://codepsique-signup.onrender.com/users", {
     method: "GET",
     })
     return allUsers;
   }
 
   const getUserProfileImage = async (id) => {
-    const profileImage = await fetch(`http://localhost:3333/users/${id}/image`);
+    const profileImage = await fetch(`https://codepsique-signup.onrender.com/users/${id}/image`);
     return profileImage;
   }
 
