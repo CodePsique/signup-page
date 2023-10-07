@@ -122,6 +122,10 @@ body {
   margin-top: 3px;
 }
 
+.input-box #profile {
+  width: 100%;
+}
+
 .input-box .radio {
   height: 15px;
 }
