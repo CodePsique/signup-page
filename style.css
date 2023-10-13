@@ -299,4 +299,7 @@ body {
     max-height: 20rem;
     padding-right: 5rem;
   }
+  .input-box {
+    width: 100%;
+  }
 }
