@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("availability", availability);
         formData.append("profileImage", profileImage);
 
-        fetch("https://codepsique-signup.onrender.com/users", {
+        const serverURL = process.env.SERVER_URL;
+
+        fetch(`${serverURL}/users`, {
           method: "POST",
           body: formData,
         })
