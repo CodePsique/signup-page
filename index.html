@@ -7,20 +7,22 @@
 
   <script src="./submit.js"></script>
 
-  <title>Inscrição Grupo de Estudos CodePsique</title>
+  <title>Supernova</title>
 </head>
 <body>
   <div class="container">
     <div class="form-image">
-      <img src="logo - final.png" alt="">
+      <video width="1080" height="1920" muted autoplay loop>
+        <source src="explosion.mp4" type="video/mp4">
+    </video>
     </div>
     <div class="form sb-hidden">
-      <form action="#"  id="registration-form" enctype="multipart/form-data">
+      <form action="#"  id="idea-form" enctype="multipart/form-data">
         <div class="form-header">
           <h1 class="title">
-            Inscreva-se!
+            Construa sua startup com a Supernova
           </h1>
-          <img id="title-image" src="logo-peq.png" alt="">
+          <!-- <img id="title-image" src="logo-peq.png" alt=""> -->
         </div>
           <div class="input-group">
 
@@ -29,48 +31,34 @@
               <input id="name" type="text" name="name" placeholder="Digite seu nome completo" required> 
             </div>
               <div class="input-box">
-                <label for="email">Endereço de E-mail</label>
-                <input id="email" type="text" name="email" placeholder="Digite seu email" required> 
+                <label for="email">Endereço de e-mail</label>
+                <input id="email" type="text" name="email" placeholder="Digite seu e-mail" required> 
               </div>
               <div class="input-box">
                 <label for="whatsapp">WhatsApp</label>
-                <input id="whatsapp" type="tel" name="whatsapp" maxlength="15" placeholder="Digite seu contato do WhatsApp" required> 
+                <input id="whatsapp" type="tel" name="whatsapp" maxlength="15" placeholder="Digite seu número do WhatsApp" required> 
+              </div>
+              <div class="input-box" id="idea-container">
+                <label for="idea">Descreva sua ideia</label>
+                <textarea id="idea" name="idea" rows="4" placeholder="Descreva como sua ideia pode ser valiosa para alguém"></textarea>
+              </div>
+              <div class="input-box" id="current-phase-container">
+                <label for="current-phase">Fase atual da ideia</label>
+                <select id="current-phase" name="current-phase">
+                  <option value="conceito">Conceito</option>
+                  <option value="mvp">Produto Mínimo Viável</option>
+                  <option value="market">Lançado no mercado</option>
+                </select>
               </div>
               <div class="input-box">
-              <label for="expectations">Expectativas no Grupo de Estudos</label>
-              <textarea id="expectations" name="expectations" rows="4" placeholder="Descreva suas expectativas em relação ao grupo de estudos"></textarea>
-            </div>
-            <div class="input-box">
-              <label for="discovery">Como você conheceu o CodePsique</label>
-              <input id="discovery" type="text" name="discovery" placeholder="Explique como você ficou sabendo do grupo de estudos">
-            </div>
-            <div class="input-box">
-              <label for="availability">Os encontros serão quinzenais. Quando você prefere que ocorram?</label>
-              <div class="radio-container"> 
-                <input class="radio" type="radio" id="morning" name="availability" value="Sábado de manhã">
-                <label for="morning">Aos sábados, pela manhã, das 9h às 11h</label>
+                <div class="checkbox-container">
+                  <input class="checkbox" id="dev" type="checkbox" name="dev">
+                  <label for="dev">Não tenho uma ideia. Quero ajudar no desenvolvimento de uma das ideias selecionadas.</label>
+                </div>
               </div>
-              <div class="radio-container">
-                <input class="radio" type="radio" id="afternoon" name="availability" value="Sábado à tarde">
-                <label for="afternoon">Aos sábados, à tarde, das 14h às 16h</label>
-              </div>
-            </div>
-
-            <div class="input-box">
-              <label for="profileImage">Selecione uma foto de perfil para o Welcome Day</label>
-              <input id="profile" type="file" accept="image/*" name="profileImage">
-          </div>
-            
-            <div class="input-box">
-              <div class="checkbox-container">
-                <input class="checkbox" id="agree-to-rules" type="checkbox" name="agree-to-rules" required>
-                <label for="agree-to-rules">Você concorda em cumprir as regras e regulamentos do grupo de estudos, incluindo a participação ativa e a colaboração com os outros membros.</label>
-              </div>
-            </div>
-            
-            <div class="sign-up" >
+            <div class="submit" >
               <p id="fill-fields">*Preencha todos os campos.</p>
-              <button id="signup" class="button-53" type="submit">Inscrever-se</button>
+              <button id="submit" class="button-53" type="submit">Vamos nessa!</button>
             </div>
           </div>
         </div>
